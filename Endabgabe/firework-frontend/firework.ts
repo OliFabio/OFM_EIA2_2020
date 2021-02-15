@@ -92,8 +92,8 @@ namespace firework {
 
     crc2 = <CanvasRenderingContext2D>canvas.getContext("2d")
     //add inital canvas style
-    canvas.style.width = '100%';
-    canvas.style.height = '100%';
+    canvas.style.width = "100%";
+    canvas.style.height = "100%";
     // ...then set the internal size to match
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
@@ -208,19 +208,19 @@ namespace firework {
     //how many columns a row has
     var cols = ["_id","name","size","color","secondColor","speed"]
 
-    var headerRow = '';
-    var bodyRows = '';
+    var headerRow = "";
+    var bodyRows = "";
 
     for (let i = 0; i < rows.length; i++) {
       let row: any = rows[i];
       
       //create for each rocket a tr table row
-      bodyRows += '<tr>';
+      bodyRows += "<tr>";
       //cols = ["name", "siuze", "color"...]
       for (let j = 0; j < cols.length; j++) {
         let colName = cols[j];
         //add the elements row[colName] = id value, name value, etc.
-        bodyRows += '<td>' + row[colName] + '</td>';
+        bodyRows += "<td>" + row[colName] + "</td>";
       }
       // add the action buttons after each row
       bodyRows += `<td>
@@ -228,7 +228,7 @@ namespace firework {
       <a class="delete"  data-index="${i}" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
       </td>`
       // close the table row
-      bodyRows += '</tr>';
+      bodyRows += "</tr>";
     }
 
     rocketTable.innerHTML = bodyRows;

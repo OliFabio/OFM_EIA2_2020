@@ -12,18 +12,18 @@ namespace firework {
         x: pos ? pos.x : 0,
         y: pos ? pos.y : 0
     };
-    this.vel = {
+      this.vel = {
         x: 0,
         y: 0
     };
-    this.shrink = 0.98;
-    this.size = 0;
+      this.shrink = 0.98;
+      this.size = 0;
 
-    this.resistance = ScatterSize.MEDIUM;
-    this.gravity = 0.1;
+      this.resistance = ScatterSize.MEDIUM;
+      this.gravity = 0.1;
     
-    this.alpha = 1;
-    this.fade = 0;
+      this.alpha = 1;
+      this.fade = 0;
     
     }
 
@@ -33,11 +33,11 @@ namespace firework {
     }
       crc2.save();
 
-      crc2.globalCompositeOperation = 'lighter';
+      crc2.globalCompositeOperation = "lighter";
 
       let x = this.pos.x,
         y = this.pos.y,
-        r = this.size/2;
+        r = this.size / 2;
 
       //create gradient
       let gradient: CanvasGradient = crc2.createRadialGradient(x, y, 0.1, x, y, r);

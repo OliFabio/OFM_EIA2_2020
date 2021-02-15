@@ -5,6 +5,7 @@ namespace firework {
     
     public apiUrl: string = herokuUrl;
 
+    // tslint:disable-next-line: no-empty
     constructor() {
 
     }
@@ -32,14 +33,14 @@ namespace firework {
     }
 
     async postRocket(rockets: RocketObject) {
-      let settings: object = this.getHeaderSettings('POST')
+      let settings: object = this.getHeaderSettings("POST")
       try {
        
         const fetchResponse = await fetch(this.apiUrl + "rockets", {
           method: "POST",
           headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            "Accept": "application/json",
+            "Content-Type": "application/json"
           },
           body: JSON.stringify(rockets)
         });
@@ -51,14 +52,14 @@ namespace firework {
       }
     }
 
-    private getHeaderSettings(methodType: String = 'GET', body?: object): object {
+    private getHeaderSettings(methodType: String = "GET", body?: object): object {
       switch (methodType) {
-        case 'POST':
+        case "POST":
           return {
             method: methodType,
             headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
+              "Accept": "application/json",
+              "Content-Type": "application/json"
             },
             body: JSON.stringify(body)
           };
@@ -67,8 +68,8 @@ namespace firework {
           return {
             method: methodType,
             headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
+              "Accept": "application/json",
+              "Content-Type": "application/json"
             }
           };
       }

@@ -8,7 +8,7 @@ namespace firework {
       public color: number;
       public secondColor: number;
       
-      constructor(v:Vector){
+      constructor(v: Vector){
         this.pos = v;
         this.alpha = 1;
       }
