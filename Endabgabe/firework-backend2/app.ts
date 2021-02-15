@@ -1,17 +1,17 @@
-import { Routes } from './routes';
-import * as express from 'express';
+import { Routes } from "./routes";
+import * as express from "express";
 import * as bodyParser from "body-parser";
 import * as mongoose from "mongoose";
 
-  class App {
+class App {
     // create express application which is a nodejs internal
     public app: express.Application;
     //create the routes like /api/rockets
     public routes: Routes = new Routes();
     //local mongodb url
-    public localMongoUrl: string = 'mongodb://127.0.0.1:27017/firework';
+    public localMongoUrl: string = "mongodb://127.0.0.1:27017/firework";
     //remote mongodb url
-    public remoteMongoUrl: string = "mongodb+srv://burak:burak@firework.fxgkf.mongodb.net/firework?retryWrites=true&w=majority";
+    public remoteMongoUrl: string = "mongodb+srv://gernolivEIA:<password>@cluster0.nlvis.mongodb.net/<dbname>?retryWrites=true&w=majority";
     // variable holding the parameter from  npm start if the database url should be remote or local
     public isRemote: boolean;
 
@@ -35,10 +35,10 @@ import * as mongoose from "mongoose";
 
       // enable cors
       this.app.use(function (req, res, next) {
-        res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Accept');
-         res.setHeader("Access-Control-Allow-Origin", "*");
-         res.setHeader("Access-Control-Allow-Methods", "HEAD,PUT,POST,GET,DELETE,OPTIONS");
-         next();
+        res.setHeader("Access-Control-Allow-Headers", "Content-Type, Accept");
+        res.setHeader("Access-Control-Allow-Origin", "*");
+        res.setHeader("Access-Control-Allow-Methods", "HEAD,PUT,POST,GET,DELETE,OPTIONS");
+        next();
      });
 
       // easy parse json brom request.body
@@ -50,7 +50,7 @@ import * as mongoose from "mongoose";
     private mongoSetup(): void {
       let url: string = this.localMongoUrl;
       if (this.isRemote) {
-        url = this.remoteMongoUrl
+        url = this.remoteMongoUrl;
       }
       console.log(url)
       // useUnifiedTopology because error occurs
