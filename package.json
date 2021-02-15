@@ -1,0 +1,21 @@
+{
+  "name": "gernoliveeia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+    "scripts": {
+      "start": "node OFM_EIA2_2020/Endabgabe/firework-backend2/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OliFabio/OFM_EIA2_2020.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OliFabio/OFM_EIA2_2020/issues"
+  },
+  "homepage": "https://github.com/OliFabio/OFM_EIA2_2020#readme"
+}
